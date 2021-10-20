@@ -1,0 +1,19 @@
+{
+  "name": "showsandboxdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "koa": "^2.13.4",
+    "koa-pug": "^5.0.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^7.0.1",
+    "koa2-router": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "junhe.hu",
+  "license": "ISC"
+}

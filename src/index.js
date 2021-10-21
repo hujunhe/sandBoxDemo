@@ -17,16 +17,16 @@ router.get('/show', async ctx => {
     await ctx.render('showScreen')
 })
 router.get('/getData', ctx => {
-    const data = JSON.parse(readFile() || {}).chooseItem
+    const data = JSON.parse(readFile() || {})
     ctx.body = {
-        id: data,
-        name: '花蝴蝶',
-        address: '北京'
+        id: data.chooseItem,
+        name: data.name,
     }
 })
 router.get('/chooseItem', ctx => {
     const id = ctx.query.id
-    writeFile(id)
+    const name = ctx.query.name
+    writeFile(id, name)
     ctx.body = {
         code: 0
     }
@@ -40,6 +40,6 @@ function readFile() {
     const data = fs.readFileSync(path.resolve(__dirname, './log.json'), { encoding: 'utf8' })
     return data
 }
-function writeFile(id) {
-    fs.writeFileSync(path.resolve(__dirname, './log.json'), JSON.stringify({ chooseItem: id }))
+function writeFile(id, name) {
+    fs.writeFileSync(path.resolve(__dirname, './log.json'), JSON.stringify({ chooseItem: id, name: name }))
 }

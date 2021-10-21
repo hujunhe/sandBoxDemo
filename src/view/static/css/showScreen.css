@@ -18,3 +18,9 @@
 .box-item.current {
     background-color: coral;
 }
+.title {
+    font-size: 40px;
+}
+.message {
+    font-size: 30px;
+}

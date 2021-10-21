@@ -4,7 +4,7 @@ $(function() {
     })
     $('.js_chooseItem').click(function() {
         console.log()
-        ajax('get', '/chooseItem', { id: $(this).text() }, function() {}, function() {})
+        ajax('get', '/chooseItem', { id: $(this).attr('id').replace('item', ''), name: $(this).text() }, function() {}, function() {})
     })
 })
 function ajax(type = 'get', url = '', data = {}, cb, fcb) {
